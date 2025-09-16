@@ -11,11 +11,32 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// Serve static files
-app.use(express.static('.'));
+// Serve static files with proper headers
+app.use(express.static('.', {
+    setHeaders: (res, path) => {
+        if (path.endsWith('.css')) {
+            res.setHeader('Content-Type', 'text/css');
+        }
+        if (path.endsWith('.js')) {
+            res.setHeader('Content-Type', 'application/javascript');
+        }
+    }
+}));
+
+// Serve specific static files
+app.get('/styles.css', (req, res) => {
+    res.setHeader('Content-Type', 'text/css');
+    res.sendFile(path.join(__dirname, 'styles.css'));
+});
+
+app.get('/app.js', (req, res) => {
+    res.setHeader('Content-Type', 'application/javascript');
+    res.sendFile(path.join(__dirname, 'app.js'));
+});
 
 // Serve the main page
 app.get('/', (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
