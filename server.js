@@ -76,7 +76,13 @@ app.get('/api/posts', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-    console.log('Make sure your .env file contains your Beehiiv credentials');
-});
+// For Vercel, export the app
+module.exports = app;
+
+// For local development
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Server running on http://localhost:${PORT}`);
+        console.log('Make sure your .env file contains your Beehiiv credentials');
+    });
+}
