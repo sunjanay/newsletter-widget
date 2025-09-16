@@ -14,6 +14,11 @@ app.use(express.json());
 // Serve static files
 app.use(express.static('.'));
 
+// Serve the main page
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 // Beehiiv API proxy endpoint
 app.get('/api/posts', async (req, res) => {
     try {
