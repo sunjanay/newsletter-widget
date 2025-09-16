@@ -23,7 +23,7 @@ body {
 .widget-header {
     background: white;
     color: #333;
-    padding: 40px 30px 20px 30px;
+    padding: 30px 30px 15px 30px;
     text-align: center;
     position: relative;
     border-bottom: 1px solid #f0f0f0;
@@ -47,14 +47,14 @@ body {
 .widget-header p {
     font-size: 1.1rem;
     color: #666;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     line-height: 1.5;
 }
 
 /* Subscription widget styling */
 .subscription-widget {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 5px;
     display: flex;
     justify-content: center;
 }
@@ -88,7 +88,7 @@ body {
 
 /* Posts Container - Blog Layout */
 .posts-container {
-    padding: 20px 40px 40px 40px;
+    padding: 15px 40px 40px 40px;
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 30px;

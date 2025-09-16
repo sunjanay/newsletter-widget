@@ -43,10 +43,10 @@ async function loadLatestPosts() {
         console.log('API Response data:', data);
         
         if (data.data && data.data.length > 0) {
-            console.log('Sample post data:', data.data[0]);
-            console.log('Available date fields:', Object.keys(data.data[0]).filter(key => key.toLowerCase().includes('date') || key.toLowerCase().includes('created') || key.toLowerCase().includes('publish')));
+            console.log('API Success - Posts loaded:', data.data.length);
             displayPosts(data.data);
         } else {
+            console.log('API Response but no posts:', data);
             showError('No newsletter posts found. Check your Beehiiv publication.');
         }
         
