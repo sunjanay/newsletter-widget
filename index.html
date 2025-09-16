@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Newsletter Posts</title>
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
+</head>
+<body>
+    <div class="newsletter-widget">
+        <header class="widget-header">
+            <h1>Our Newsletter</h1>
+            <h2>Our Standards: Led by Youth, Guided by Experience</h2>
+            <p>Monthly community updates with Thriver Stories, Panel Discussions and Theme Releases. Subscribe below!</p>
+            
+            <div class="subscription-widget">
+                <iframe src="https://subscribe-forms.beehiiv.com/adcc3240-d880-40fe-af14-c79aff6b38f9" 
+                        class="beehiiv-embed" 
+                        data-test-id="beehiiv-embed" 
+                        frameborder="0" 
+                        scrolling="no" 
+                        style="width: 512px; height: 192px; margin: 0; border-radius: 0px 0px 0px 0px !important; background-color: transparent; box-shadow: 0 0 #0000; max-width: 100%;">
+                </iframe>
+            </div>
+        </header>
+        
+        <div id="loading" class="loading">
+            <div class="loading-spinner"></div>
+            <p>Loading latest posts...</p>
+        </div>
+        
+        <div id="posts-container" class="posts-container">
+            <!-- Posts will be loaded here dynamically -->
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
